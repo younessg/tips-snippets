@@ -1,0 +1,4 @@
+String target2 = "Bluetooth";
+String path2 = "new UiScrollable(new UiSelector())
+                .scrollIntoView(" + "new UiSelector().textContains(\"" + target2 + "\"));";
+listView.findElementByAndroidUIAutomator(path2);

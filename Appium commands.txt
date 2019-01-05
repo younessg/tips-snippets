@@ -1,0 +1,11 @@
+Appium commands
+---------------
+
+Server flags:
+    http://appium.io/docs/en/writing-running-appium/server-args/
+
+CLI:
+appium --address 127.0.0.1 --port 4723 --log C:\appium_files\appium_logs
+
+Start server from java:
+    http://www.qaautomated.com/2016/01/how-to-start-appium-server-using-java.html

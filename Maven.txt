@@ -1,0 +1,11 @@
+Maven
+-----
+
+How to run test cases:
+    https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html
+
+Run all tests:
+    mvn test
+
+Single test:
+    mvn -Dtest=AppiumTest test

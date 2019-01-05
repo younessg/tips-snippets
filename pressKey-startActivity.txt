@@ -1,0 +1,9 @@
+driver.pressKey(new KeyEvent(AndroidKey.HOME));
+
+boolean isKeyboardShown = driver.isKeyboardShown();
+
+driver.hideKeyboard();
+
+driver.closeApp();
+driver.startActivity(new Activity("com.example", "ActivityName"));
+

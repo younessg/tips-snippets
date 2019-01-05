@@ -1,0 +1,79 @@
+ADB commands:
+-------------
+
+Wake up screen
+    adb shell input keyevent 26
+
+Get list of packages on device:
+    adb shell pm list packages
+
+Find path to application:
+    adb shell pm path com.idem
+
+avd device:
+    Pixel_XL_API_27
+	C:\Users\YOGH5035\AppData\Local\Android\sdk\emulator>emulator -avd Pixel_XL_API_27
+
+avd serial name:
+    emulator-5554
+
+UiAutomatorViewer:
+    C:\Users\YOGH5035\AppData\Local\Android\sdk\tools\bin
+
+List avds:
+    emulator -list-avds
+
+Start avd from command line:
+    cd C:\Users\YOGH5035\AppData\Local\Android\sdk\emulator
+    emulator -avd Pixel_XL_API_27
+
+Find running app package name and activity:
+    adb shell dumpsys window windows | grep -i <any unique string from your Pkg Name>
+    adb shell dumpsys window windows | findstr Focus << on windows 
+    adb shell > dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
+	
+Start app from command line:
+    adb shell am start -n com.package.name/com.package.name.ActivityName
+    adb shell am start -c api.android.intent.LAUNCHER -a api.android.category.MAIN -n com.android.calculator2/com.android.calculator2.Calculator
+	
+Save adb log to text file:
+    adb log > log.txt
+
+Clear adb log:
+    adb logcat -c >> clear buffer	
+		
+Take screenshot:
+    adb shell screencap /sdcrad/Android/screenshot.png
+		
+Remove screenshot:
+	adb shell rm /sdcrad/Android/screenshot.png
+	
+Push file to adb:
+    adb push log.txt /sdcrad/Android
+	
+Pull file from adb:
+    adb pull /sdcrad/Android/log.txt
+	
+Stop running process
+    adb shell am force-stop com.package.appname
+   
+Clear app data on device:
+    adb shell pm clear com.package.appname
+	
+Send text to input field:
+    adb shell input text "Artur"
+
+Send keyevents:
+    adb shell input keyevent 4 // Exit
+	adb shell input keyevent 3 // Home button
+
+Get device properties:
+    adb shell getprop
+	
+Debug appium hybrid app in Chrome:
+    connect device
+    go to chrome://inspect/#devices in chrome browser
+    check phone & allow usb debugging if popup appears
+    check what webViews chrome spotted and click inspect for the one you need enter image description here
+    And now you search for elements and their locators the same way you did in Selenum/Web automation enter image description here
+    Don't forget to switch context to WebView in your appium test before you actually searching inside webView.
